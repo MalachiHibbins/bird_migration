@@ -9,20 +9,20 @@
 class System {
   public:
     Box simulationBox;
-    // std::vector<Particle> particles;
     int particleNumber;
     double sideLength;
     double timeStep;
     double noiseStrength;
-    std::mt19937 gen;
-    double uniformdist(double min, double max);
+    int seed = 69;
+    std::mt19937 gen = std::mt19937(seed);
     System(int particleNumber, double sideLength, double timeStep, double noiseStrength);
-    void updateRule();  
-
-  
-    
-
+    void updateRule();
+    std::uniform_real_distribution<double> uniformDist;  
+    double uniform(double min, double max);
+    // void randomStart():
 
 };
+
+
 
 #endif
