@@ -6,7 +6,10 @@ void System::updateRule() {
 }
 
 System::System(int particleNumber, double sideLength, double timeStep, double noiseStrength) {
-    std::cout << "System created!" << std::endl;
+    this->particleNumber = particleNumber;
+    this->sideLength = sideLength;
+    this->timeStep = timeStep;
+    this->noiseStrength = noiseStrength;
 }
 
 

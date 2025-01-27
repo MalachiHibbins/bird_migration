@@ -2,18 +2,18 @@
 #define SYSTEM_H
 # include <iostream>
 
-#include <vector> //to use standard C++ vectors
-// #include "box.h" //yet to be created!
+#include <vector> 
+#include "box.h" //yet to be created!
 // #include "particle.h" //yet to be created!
 
 class System {
   public:
-    int   particleNumber;
-    double noiseStrength;
-    double timeStep;
-    double sideLength;
-    // Box simulationBox;
+    Box simulationBox;
     // std::vector<Particle> particles;
+    int particleNumber;
+    double sideLength;
+    double timeStep;
+    double noiseStrength;
     System(int particleNumber, double sideLength, double timeStep, double noiseStrength);
     void updateRule();  
 
