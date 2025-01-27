@@ -19,7 +19,8 @@ class System {
     void updateRule();
     std::uniform_real_distribution<double> uniformDist;  
     double uniform(double min, double max);
-    // void randomStart():
+    void randomStart();
+    std::vector<Particle> particles;
 
 };
 
