@@ -1,10 +1,10 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 # include <iostream>
-
+# include <random>
 #include <vector> 
-#include "box.h" //yet to be created!
-// #include "particle.h" //yet to be created!
+#include "box.h"
+#include "particle.h"
 
 class System {
   public:
@@ -14,8 +14,13 @@ class System {
     double sideLength;
     double timeStep;
     double noiseStrength;
+    std::mt19937 gen;
+    double uniformdist(double min, double max);
     System(int particleNumber, double sideLength, double timeStep, double noiseStrength);
     void updateRule();  
+
+  
+    
 
 
 };
