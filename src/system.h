@@ -21,8 +21,10 @@ class System {
     double uniform(double min, double max);
     void randomStart();
     std::vector<Particle> particles;
-
+    
+    void saveConfig(const std::string &filename);
 };
+
 
 
 

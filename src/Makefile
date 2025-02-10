@@ -1,12 +1,15 @@
 CC = g++
 CFLAGS = -O2 -Wall -std=c++17
-SRC = main.cpp
-EXEC = program
+SRC = main.cpp system.cpp box.cpp particle.cpp
+EXEC = myvicsek
+OBJ = $(SRC:.cpp=.o)
 
-$(EXEC): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(EXEC)
+$(EXEC): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(EXEC)
 
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+	@echo $@
 
-
-OBJ = $(SRC:.cpp=main.o)  # Converts .cpp files to .o files
-
+clean:
+	rm -f $(OBJ) $(EXEC)
